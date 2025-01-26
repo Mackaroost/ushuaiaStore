@@ -10,6 +10,7 @@ const Navbar = () => {
     const path = usePathname()
   const [openMenu, setOpenMenu] = useState(false);
 
+
   const navLink = [
     { href: "/productos", name: "Productos" },
     { href: "/como-comprar", name: "Cómo Comprar" },
@@ -18,18 +19,24 @@ const Navbar = () => {
   const contactLink = [
     { href: "/instagram/sa", icon: <FaInstagram size={24} />, label: "Instagram" },
     { href: "/tiktok/sa", icon: <AiFillTikTok size={24} />, label: "Tiktok" },
-    { href: "/", icon: <FaWhatsappSquare size={24} />, label: "Whatsapp" },
+    {
+      href: "https://wa.me/5491166259448?text=Hola,%20quiero%20más%20información%20sobre%20los%20productos%20de%20soñandoUshuaia",
+      icon: <FaWhatsappSquare size={24} />,
+      label: "Whatsapp",
+      external: true, 
+    },
   ];
 
   return (
-    <nav className="w-full p-4 bg-gradient-to-r  shadow-lg">
-      <div className="container mx-auto flex flex-row justify-between items-center">
+    <nav className="w-full p-4 bg-gradient-to-r  shadow-lg ">
+      <div className="container mx-auto flex justify-between items-center ">
         {/* Contact Links */}
         <div className="flex justify-start gap-x-4">
           {contactLink.map((item) => (
             <Link
               href={item.href}
               key={item.href}
+              target={item.external ? "_blank" : "_self"}
               className="flex items-center text-black hover:text-gray-200 transition-transform transform hover:scale-110"
             >
               {item.icon}
@@ -41,7 +48,7 @@ const Navbar = () => {
         {/* Centered Brand Name */}
         <div>
           <Link href="/">
-            <h2 className="text-black font-bold text-2xl tracking-wide hover:text-gray-200 transition-colors">
+            <h2 className="text-center text-black font-bold text-2xl tracking-wide hover:text-gray-200 transition-colors">
               Dreaming Ushuaia
             </h2>
           </Link>
