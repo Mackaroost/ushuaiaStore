@@ -1,8 +1,8 @@
 "use client"
-import { stateCount } from '../../../store/contadorCart/contador';
+import { stateCount } from '@/store/contadorCart/contador';
 
 
-const Contador = () => {
+const SelectCantidad = () => {
   const cantidad = stateCount(state=>state.cantidad)
   const sumarCantidad = stateCount(state=> state.incrementar)
   const restCantidad = stateCount(state=> state.decrementar)
@@ -16,4 +16,4 @@ const Contador = () => {
   )
 }
 
-export default Contador
+export default SelectCantidad

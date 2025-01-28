@@ -1,6 +1,6 @@
 import {prisma} from '@/lib/prisma'
 
-const obtenerProductoSlug = async (slug:string) => {
+export const obtenerProductoSlug = async(slug:string) => {
  return await prisma.productos.findFirst({
     where:{
         slug: slug
@@ -8,4 +8,3 @@ const obtenerProductoSlug = async (slug:string) => {
  })
 }
 
-export default obtenerProductoSlug

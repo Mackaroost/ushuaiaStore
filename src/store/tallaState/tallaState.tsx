@@ -1,11 +1,11 @@
 import {create} from  'zustand'
 
 interface tallaState {
-   talla: string | null
+   talla: string
     actualizarTalla:(talla:string)=> void
 }
 
 export const tallaStore = create<tallaState>()((set)=>({
-    talla:null,
-    actualizarTalla:(talla: string)=>set({talla})
+    talla:'',
+    actualizarTalla:(talla: string)=>set({talla: talla})
 }))
