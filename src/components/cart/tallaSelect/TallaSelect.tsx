@@ -12,11 +12,13 @@ const TallaSelect = ({ talla }: Props) => {
 
   return (
     <div className="py-2">
-      {talla && talla.length > 0 ? (
+      {
+      talla && talla.length > 0 ? (
         <>
           <p className="text-sm font-semibold text-zinc-800">Tallas disponibles</p>
           <div className="flex gap-3 flex-wrap pt-2">
-            {talla.map((item, index) => (
+            {
+            talla.map((item, index) => (
               <div
                 key={index}
                 className={`px-4 text-md font-bold cursor-pointer border rounded ${
@@ -28,12 +30,14 @@ const TallaSelect = ({ talla }: Props) => {
               >
                 {item}
               </div>
-            ))}
+            ))
+            }
           </div>
         </>
       ) : (
         <p className="text-sm text-zinc-500 py-4">Este producto no tiene tallas disponibles.</p>
-      )}
+      )
+      }
     </div>
   );
 };

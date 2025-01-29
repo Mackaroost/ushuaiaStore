@@ -22,7 +22,7 @@ export interface ProductosProps {
     categoriaId: number;
     slug: string;
     descripcion: string;
-    talla?: string;
+    talla: string | null;
     imagenA?: string;
     imagenB?: string;
     imagenC?: string; 
