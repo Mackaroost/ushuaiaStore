@@ -5,6 +5,7 @@ import { MinimalCartProducts } from '../../interfaces/interface';
 interface State {
   cart: MinimalCartProducts[];
   agregar: (productos: MinimalCartProducts) => void;
+  eliminar: (id:number)=>void
 }
 
 // Crear la tienda Zustand
@@ -29,4 +30,11 @@ export const cartStore = create<State>((set, get) => ({
 
     set({ cart: cartReload });
   },
+
+  eliminar: (id) => {
+    set((state) => ({
+      cart: state.cart.filter((item) => item.id !== id),
+    }));
+  },
+
 }));

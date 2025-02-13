@@ -21,14 +21,14 @@ const ProductosDetalles = async ({ params }: Props) => {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 bg-gradient-to-r shadow-lg p-4 m-4 rounded-md container mx-auto">
+    <div className="grid grid-cols-1  md:grid-cols-3 bg-gradient-to-r shadow-lg p-4 m-4 rounded-md container mx-auto">
       {/* Sección de imágenes */}
       <div className="col-span-1 md:col-span-2 h-[500px] mr-3 flex items-center justify-center">
         <h2 className="text-xl font-semibold">Imágenes del producto</h2>
       </div>
 
       {/* Detalles del producto */}
-      <div className="col-span-1 md:col-span-1">
+      <div className="col-span-1 text-center  md:col-span-1 md:text-star">
         <p className="text-4xl font-bold py-2">{res?.nombre}</p>
         <p className="text-2xl font-semibold">${res?.precio}</p>
 

@@ -5,10 +5,12 @@ import { AiFillTikTok } from "react-icons/ai";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { cartStore } from "@/store/storeCart/cartStore";
 
 const Navbar = () => {
     const path = usePathname()
   const [openMenu, setOpenMenu] = useState(false);
+  const cart = cartStore((state)=> state.cart.length)
 
 
   const navLink = [
@@ -46,7 +48,7 @@ const Navbar = () => {
         </div>
 
         {/* Centered Brand Name */}
-        <div>
+        <div className="text-center">
           <Link href="/">
             <h2 className="text-center text-black font-bold text-2xl tracking-wide hover:text-gray-200 transition-colors">
               Dreaming Ushuaia
@@ -75,7 +77,7 @@ const Navbar = () => {
           >
             <div className="relative">
               <span className="absolute text-xs rounded px-1 font-bold -top-2 -right-2 bg-slate-50 text-black">
-                  0
+                  {cart}
               </span>
             <FaShoppingBag size={28} />
             </div>

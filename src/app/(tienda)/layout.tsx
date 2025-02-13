@@ -26,7 +26,7 @@ export default function TiendaLayout({
   return (
    <>
      <Navbar/>
-     <section>
+     <section className="py-4">
        {children}
      </section>
      <Footer/>
